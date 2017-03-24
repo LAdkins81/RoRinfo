@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  root 'users#main'
+
+  get 'users/:id' => 'users#show'
+  post 'users/create' => 'users#create'
+  post 'users/login' => 'users#login'
+  delete 'users/:id' => 'users#logout'
+
+  post 'playlists/:song_id' => 'playlists#create'
+
+  resources :songs
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
